@@ -11,6 +11,8 @@ public class CollectAndPlace : MonoBehaviour
 
     public int count;
 
+    public AudioSource audSource;
+
     public void CollectGame()
     {
         if (square.transform.position == snap1.transform.position)
@@ -18,6 +20,13 @@ public class CollectAndPlace : MonoBehaviour
             Debug.Log("DOOR OPEN");
             door.SetActive(false);
         }
+    }
+
+    public void AddRice()
+    {
+        Debug.Log("Rice added");
+        audSource.Play();
+
     }
     void Start()
     {
