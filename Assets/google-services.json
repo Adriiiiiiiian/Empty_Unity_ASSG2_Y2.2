@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "649820873310",
+    "firebase_url": "https://asg2-1cdee-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "asg2-1cdee",
+    "storage_bucket": "asg2-1cdee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:649820873310:android:e4934d937fe69a9c94cacf",
+        "android_client_info": {
+          "package_name": "com.HawkerCentre.HawkerGame"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbY0-ofh2I8dvyQ_zM7-RKO6v8n_U-Xmc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
