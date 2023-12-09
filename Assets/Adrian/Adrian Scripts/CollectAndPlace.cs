@@ -9,6 +9,21 @@ public class CollectAndPlace : MonoBehaviour
     public GameObject square;
     public GameObject door;
 
+
+    public GameObject chicken;
+    public bool chickenbool;
+
+    public GameObject sauce;
+    public bool saucebool;
+
+    public GameObject veggies;
+    public bool veggiesbool;
+
+    public GameObject rice;
+    public bool ricebool;
+
+
+
     public int count;
 
     public AudioSource audSource;
@@ -24,10 +39,47 @@ public class CollectAndPlace : MonoBehaviour
 
     public void AddRice()
     {
-        Debug.Log("Rice added");
-        audSource.Play();
+        rice.SetActive(true);
+        ricebool = true;
 
     }
+
+    public void AddChicken()
+    {
+        if (ricebool == true)
+        {
+            chicken.SetActive(true);
+            chickenbool = true;
+
+        }
+        
+
+    }
+    public void AddVeg()
+    {
+        if (ricebool == true)
+        {
+            veggies.SetActive(true);
+            veggiesbool = true;
+
+        }
+
+
+    }
+
+    public void AddSauce()
+    {
+        if (ricebool == true)
+        {
+            sauce.SetActive(true);
+            saucebool = true;
+
+        }
+
+
+    }
+
+
     void Start()
     {
         
