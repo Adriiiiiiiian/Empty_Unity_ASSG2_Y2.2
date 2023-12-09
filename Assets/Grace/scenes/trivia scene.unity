@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19803697, g: 0.18309352, b: 0.14453442, a: 1}
+  m_IndirectSpecularColor: {r: 0.19890097, g: 0.18351579, b: 0.14408758, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -479,6 +479,27 @@ MonoBehaviour:
     ExitDistance: 0.02
     ReEnterDistance: 0.02
   _closeDistanceThreshold: 0.001
+  _tiebreakerScore: 0
+--- !u!114 &261606259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261606254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb86ba9d4c5126e48bfef9b0c9550e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactorFilters: []
+  _maxInteractors: -1
+  _maxSelectingInteractors: -1
+  _data: {fileID: 0}
+  _pointableElement: {fileID: 261606257}
+  _surface: {fileID: 1695929059}
+  _selectSurface: {fileID: 0}
+  _movementProvider: {fileID: 0}
   _tiebreakerScore: 0
 --- !u!1 &389918353
 GameObject:
@@ -1291,7 +1312,7 @@ PrefabInstance:
     - target: {fileID: 666950340213143223, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 546
+      value: 435
       objectReference: {fileID: 0}
     - target: {fileID: 666950340213143223, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
@@ -2596,7 +2617,7 @@ Transform:
   m_GameObject: {fileID: 1396767638}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.28606832, y: 0.71980417, z: 1.9551308}
+  m_LocalPosition: {x: -0.28606832, y: 0.71980417, z: -109.044876}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3085,7 +3106,7 @@ Transform:
   m_GameObject: {fileID: 1657690794}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 508, y: -284, z: 314.47}
+  m_LocalPosition: {x: 508, y: -284, z: 203.46997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3499,6 +3520,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: button1
       objectReference: {fileID: 0}
+    - target: {fileID: 6182911830572366958, guid: c99f82ff40fd5d0458f02a63a29b41c3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6182911831590655902, guid: c99f82ff40fd5d0458f02a63a29b41c3,
         type: 3}
       propertyPath: m_IsActive
@@ -3696,6 +3722,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 261606258}
+    - targetCorrespondingSourceObject: {fileID: 6182911830572366958, guid: c99f82ff40fd5d0458f02a63a29b41c3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 261606259}
     - targetCorrespondingSourceObject: {fileID: 6182911831996455225, guid: c99f82ff40fd5d0458f02a63a29b41c3,
         type: 3}
       insertIndex: -1
