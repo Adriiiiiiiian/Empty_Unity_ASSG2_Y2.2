@@ -74,7 +74,29 @@ public class CollectAndPlace : MonoBehaviour
             sauce.SetActive(true);
             saucebool = true;
 
+           
+
+
+
         }
+
+
+    }
+
+    public void ResetFood()
+    {
+        rice.SetActive(false);
+        ricebool = false;
+
+        chicken.SetActive(false);
+        chickenbool = false;
+
+        veggies.SetActive(false);
+        veggiesbool = false;
+
+        sauce.SetActive(false);
+        saucebool = false;
+
 
 
     }
