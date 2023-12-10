@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Adrian/Adrian Scenes/whatever.unity
     guid: 6fe24fc0d90838148bfda994f352b2ed
+  - enabled: 0
+    path: Assets/Kesler/Kesler's Scene.unity
+    guid: 3b4cce338a82be14c80cb9d3b2e2209d
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: afaad25d97439a649b90757832f75cd0,
       type: 2}
