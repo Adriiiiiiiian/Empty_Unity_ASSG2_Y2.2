@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CollectAndPlace : MonoBehaviour
 {
@@ -12,12 +13,15 @@ public class CollectAndPlace : MonoBehaviour
 
     public GameObject chicken;
     public bool chickenbool;
+    public TextMeshProUGUI chickenwords;
 
     public GameObject sauce;
     public bool saucebool;
+    public TextMeshProUGUI saucewords;
 
     public GameObject veggies;
     public bool veggiesbool;
+    public TextMeshProUGUI veggieswords;
 
     public GameObject rice;
     public bool ricebool;
@@ -100,7 +104,24 @@ public class CollectAndPlace : MonoBehaviour
 
 
     }
+    public void ChangeWords()
+    {
+        if (ricebool == false)
+        {
+            chickenwords.text = "Rice First!";
+            veggieswords.text = "Rice First!";
+            saucewords.text = "Rice First!";
+        }
 
+        else if (ricebool == true)
+        {
+            chickenwords.text = "Chicken";
+            veggieswords.text = "Mixed Vegetables";
+            saucewords.text = "Sauce";
+
+        }
+                    
+    }
 
     void Start()
     {
@@ -111,6 +132,8 @@ public class CollectAndPlace : MonoBehaviour
     void Update()
     {
         CollectGame();
+
+        ChangeWords();
 
 
     }
