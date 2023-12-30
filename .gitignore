@@ -71,3 +71,52 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/Editor Default Resources/Firebase/fb_analytics.png.meta
+Assets/Editor Default Resources/Firebase/fb_analytics_dark.png.meta
+Assets/Editor Default Resources/Firebase/fb_auth.png.meta
+Assets/Editor Default Resources/Firebase/fb_auth_dark.png.meta
+Assets/Editor Default Resources/Firebase/fb_cloud_messaging.png.meta
+Assets/Editor Default Resources/Firebase/fb_cloud_messaging_dark.png.meta
+Assets/Editor Default Resources/Firebase/fb_config.png.meta
+Assets/Editor Default Resources/Firebase/fb_config_dark.png.meta
+Assets/Editor Default Resources/Firebase/fb_crashlytics.png.meta
+Assets/Editor Default Resources/Firebase/fb_crashlytics_dark.png.meta
+Assets/Editor Default Resources/Firebase/fb_database.png.meta
+Assets/Editor Default Resources/Firebase/fb_database_dark.png.meta
+Assets/Editor Default Resources/Firebase/fb_dynamic_links.png.meta
+Assets/Editor Default Resources/Firebase/fb_dynamic_links_dark.png.meta
+Assets/Editor Default Resources/Firebase/fb_functions.png.meta
+Assets/Editor Default Resources/Firebase/fb_functions_dark.png.meta
+Assets/Editor Default Resources/Firebase/fb_invites.png.meta
+Assets/Editor Default Resources/Firebase/fb_invites_dark.png.meta
+Assets/Editor Default Resources/Firebase/fb_storage.png.meta
+Assets/Editor Default Resources/Firebase/fb_storage_dark.png.meta
+Assets/Editor Default Resources/Firebase/firebase_lockup.png.meta
+Assets/Editor Default Resources/Firebase/firebase_lockup_dark.png.meta
+Assets/ExternalDependencyManager/Editor/1.2.177/Google.IOSResolver.dll.meta
+Assets/ExternalDependencyManager/Editor/1.2.177/Google.JarResolver.dll.meta
+Assets/ExternalDependencyManager/Editor/1.2.177/Google.PackageManagerResolver.dll.meta
+Assets/ExternalDependencyManager/Editor/1.2.177/Google.VersionHandlerImpl.dll.meta
+Assets/ExternalDependencyManager/Editor/CHANGELOG.md
+Assets/ExternalDependencyManager/Editor/CHANGELOG.md.meta
+Assets/ExternalDependencyManager/Editor/external-dependency-manager_version-1.2.177_manifest.txt
+Assets/ExternalDependencyManager/Editor/external-dependency-manager_version-1.2.177_manifest.txt.meta
+Assets/ExternalDependencyManager/Editor/Google.VersionHandler.dll.meta
+Assets/ExternalDependencyManager/Editor/LICENSE
+Assets/ExternalDependencyManager/Editor/LICENSE.meta
+Assets/ExternalDependencyManager/Editor/README.md
+Assets/ExternalDependencyManager/Editor/README.md.meta
+Assets/Plugins/iOS/Firebase/libFirebaseCppApp.a
+Assets/Plugins/iOS/Firebase/libFirebaseCppApp.a.meta
+Assets/Plugins/iOS/Firebase/libFirebaseCppAuth.a
+Assets/Plugins/iOS/Firebase/libFirebaseCppAuth.a.meta
+Assets/Plugins/iOS/Firebase/libFirebaseCppDatabase.a
+Assets/Plugins/iOS/Firebase/libFirebaseCppDatabase.a.meta
+Assets/Plugins/tvOS/Firebase/libFirebaseCppApp.a
+Assets/Plugins/tvOS/Firebase/libFirebaseCppApp.a.meta
+Assets/Plugins/tvOS/Firebase/libFirebaseCppAuth.a
+Assets/Plugins/tvOS/Firebase/libFirebaseCppAuth.a.meta
+Assets/Plugins/tvOS/Firebase/libFirebaseCppDatabase.a
+Assets/Plugins/tvOS/Firebase/libFirebaseCppDatabase.a.meta
+Assets/StreamingAssets/google-services-desktop.json.meta
+ProjectSettings/AndroidResolverDependencies.xml
