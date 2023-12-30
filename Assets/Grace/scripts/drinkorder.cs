@@ -15,6 +15,9 @@ public class drinkorder : MonoBehaviour
     public GameObject pengDrink;
     public GameObject orderWrong;
     public GameObject hotdrink;
+
+    public AudioSource wrongSound;
+    public AudioSource rightSound;
     public void CheckOrder()
     {
         string userInput = orderInput.text.ToLower();
@@ -23,15 +26,19 @@ public class drinkorder : MonoBehaviour
             if (userInput.Contains("peng"))
             {
                 pengDrink.SetActive(true);
+                rightSound.Play();
+
             }
             else
             {
                 hotdrink.SetActive(true);
+                rightSound.Play();
             }
         }
         else
         {
           orderWrong.SetActive(true);
+          wrongSound.Play();
         }
     }
         // Start is called before the first frame update

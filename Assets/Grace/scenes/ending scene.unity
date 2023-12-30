@@ -1931,7 +1931,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: next
+  m_text: Done!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5eb3a46400da4774bad4618a0f2ad037, type: 2}
   m_sharedMaterial: {fileID: 1605635930632670031, guid: 5eb3a46400da4774bad4618a0f2ad037,
@@ -2901,14 +2901,14 @@ RectTransform:
   m_GameObject: {fileID: 1151740262}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -271}
-  m_LocalScale: {x: 2.1721363, y: 2.1721363, z: 2.1721363}
+  m_LocalScale: {x: 2.172114, y: 2.172114, z: 2.172114}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2101841404}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8, y: -269}
+  m_AnchoredPosition: {x: -2, y: -263}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1151740264
@@ -2931,11 +2931,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hi and welcome to the hawker experience! Today we will let you experience
-    going to a hawker center in Singapore, the hawker center in question is Newton
-    Center which is a popular hawker center here in Singapore. Shall we go in?
-
-'
+  m_text: 'You successfully went through a hawker experience. If you enjoyed this
+    you could play it again to increase your high scores or get achievements. Or
+    maybe you could come to Singapore to use these skills to the real test and to
+    truly enjoy the hawker experience! '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5eb3a46400da4774bad4618a0f2ad037, type: 2}
   m_sharedMaterial: {fileID: 1605635930632670031, guid: 5eb3a46400da4774bad4618a0f2ad037,
@@ -4419,7 +4418,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f51b4c69f6ca16340841379f07d66c88, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ca2491a756f63dc44b7ad67c3b04e569, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

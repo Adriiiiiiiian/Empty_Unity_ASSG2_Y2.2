@@ -66,6 +66,12 @@ public class nextSceneAnimation : MonoBehaviour
         levelToLoad = 5;
         transistion.SetTrigger("fadeTrigger");
     }
+
+    public static void FadeToLevel6()
+    {
+        levelToLoad = 6;
+        transistion.SetTrigger("fadeTrigger");
+    }
     /// <summary>
     /// to show portal message
     /// </summary>
