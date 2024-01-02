@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19890097, g: 0.18351579, b: 0.14408758, a: 1}
+  m_IndirectSpecularColor: {r: 0.19872819, g: 0.18336745, b: 0.1440088, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -22937,7 +22937,7 @@ Transform:
   m_GameObject: {fileID: 389918353}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -792.12, y: 4.0986, z: 22.504}
+  m_LocalPosition: {x: -792.12, y: 4.0986, z: 162}
   m_LocalScale: {x: 0.82577723, y: 0.5207454, z: 0.023956977}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27780,17 +27780,17 @@ PrefabInstance:
     - target: {fileID: 666950340213143223, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.58545434
+      value: 0.31637368
       objectReference: {fileID: 0}
     - target: {fileID: 666950340213143223, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.58545434
+      value: 0.31637368
       objectReference: {fileID: 0}
     - target: {fileID: 666950340213143223, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.58545434
+      value: 0.31637368
       objectReference: {fileID: 0}
     - target: {fileID: 666950340213143223, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
@@ -35821,7 +35821,7 @@ Transform:
   m_GameObject: {fileID: 1150334336}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.764, y: -5.5378, z: 22.504}
+  m_LocalPosition: {x: 38.764, y: -5.5378, z: 162.00003}
   m_LocalScale: {x: 1.018711, y: 0.5207454, z: 0.023956977}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55025,6 +55025,8 @@ MonoBehaviour:
   pengDrink: {fileID: 0}
   orderWrong: {fileID: 1243532192}
   hotdrink: {fileID: 0}
+  wrongSound: {fileID: 0}
+  rightSound: {fileID: 0}
 --- !u!4 &1882260373
 Transform:
   m_ObjectHideFlags: 0

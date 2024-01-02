@@ -26,6 +26,9 @@ public class CollectAndPlace : MonoBehaviour
     public GameObject rice;
     public bool ricebool;
 
+    public GameObject nextui;
+    public GameObject playminigame;
+
 
 
     public int count;
@@ -122,7 +125,12 @@ public class CollectAndPlace : MonoBehaviour
         }
                     
     }
-
+    public void PlayGame()
+    {
+        nextui.SetActive(false);
+        playminigame.SetActive(true);
+            
+    }
     void Start()
     {
         
