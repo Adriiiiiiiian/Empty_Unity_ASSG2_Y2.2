@@ -10,14 +10,17 @@ using Firebase;
 using Firebase.Auth;
 using Firebase.Extensions;
 using Firebase.Database;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine.UI;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class AuthManager : MonoBehaviour
 {
     //Firebase ref
     public FirebaseAuth auth;
+    DatabaseReference mDatabaseref;
 
     //User inputs
     public TMP_InputField loginEmailInput;
@@ -25,16 +28,22 @@ public class AuthManager : MonoBehaviour
     public TMP_InputField signupEmailInput;
     public TMP_InputField signupPasswordInput;
     public TMP_InputField fpEmailInput;
+    public TMP_InputField displayNameUpdateInput;
 
     //Buttons
     public GameObject signupBtn;
     public GameObject loginBtn;
+    public GameObject updateBtn;
+    public GameObject playGameBtn;
     public GameObject forgotPasswordBtn;
+
+    //Text
+    public TMP_Text displayNameText;
 
     private void Awake()
     {
         InitializeFirebase();
-        Debug.Log("Firebase Initialize working");
+        mDatabaseref = FirebaseDatabase.DefaultInstance.RootReference;
     }
 
     void InitializeFirebase()
@@ -57,6 +66,8 @@ public class AuthManager : MonoBehaviour
             if (task.IsCompleted)
             {
                 FirebaseUser newPlayer = task.Result.User;
+                UpdateDisplayName(newPlayer.UserId);
+                ShowDisplayName();
                 Debug.LogFormat("Welcome back", newPlayer.UserId, newPlayer.Email);
             }
         });
@@ -77,18 +88,13 @@ public class AuthManager : MonoBehaviour
             else if (task.IsCompleted)
             {
                 FirebaseUser currentPlayer = task.Result.User;
+                ShowDisplayName();
                 Debug.LogFormat("Welcome back", currentPlayer.UserId, currentPlayer.Email);
             }
         });
     }
 
-    public void SignOutUser()
-    {
-        if (auth.CurrentUser != null)
-        {
-            auth.SignOut();
-        }
-    }
+
 
     public void ForgetPassword()
     {
@@ -106,5 +112,63 @@ public class AuthManager : MonoBehaviour
             }
 
         });
+    }
+
+    public void ShowDisplayName()
+    {
+        if (IsUserLoggedIn())
+        {
+            displayNameText.text = GetUserProfile();
+            displayNameUpdateInput.text = auth.CurrentUser.DisplayName;
+        }
+    }
+
+    public void UpdateDisplayName(string newDisplayName)
+    {
+        string updatename = displayNameUpdateInput.text.Trim();
+        Firebase.Auth.FirebaseUser user = auth.CurrentUser;
+
+        if (user != null)
+        {
+            Firebase.Auth.UserProfile profile = new Firebase.Auth.UserProfile
+            {
+                DisplayName = newDisplayName
+            };
+
+            user.UpdateUserProfileAsync(profile).ContinueWithOnMainThread(task =>
+            {
+                if (task.IsFaulted)
+                {
+
+                }
+                else if (task.IsCompleted)
+                {
+                    //
+                }
+            });
+        }
+    }
+
+    public string GetUserProfile()
+    {
+        return "Display Name: " + auth.CurrentUser.DisplayName;
+    }
+
+    public bool IsUserLoggedIn()
+    {
+        return auth.CurrentUser != null;
+    }
+
+    public void SignOutUser()
+    {
+        if (auth.CurrentUser != null)
+        {
+            auth.SignOut();
+        }
+    }
+
+    public void PlayGame()
+    {
+        SceneManager.LoadScene(1);
     }
 }
