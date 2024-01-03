@@ -18,57 +18,44 @@ using UnityEngine.SceneManagement;
 
 public class BirdGame : MonoBehaviour
 {
-    public GameObject birdSpawn; // Bird prefab to be spawned
-    public BoxCollider spawnArea; // Collider defining spawn area
-    //public Text scoreText; // UI Text for displaying score
-    public Text timerText; // UI Text for displaying countdown
+    public GameObject objectToSpawn; // The object you want to spawn
+    public BoxCollider spawnArea; // Collider defining the spawn area
+    public TMP_Text countdownText; // Text UI element for countdown
 
-    private int destroyedObjects = 0;
+    private bool canSpawn = true;
     private float timer = 10f;
-    private bool gameRunning = false;
-
-    void Start()
-    {
-        InvokeRepeating("SpawnObject", 0f, 1.5f); // Spawns objects at intervals
-    }
 
     void Update()
     {
-        if (gameRunning)
+        if (canSpawn)
+        {
+            StartCoroutine(SpawnObjectRandomly());
+            canSpawn = false;
+        }
+
+        if (timer > 0)
         {
             timer -= Time.deltaTime;
-            if (timer <= 0)
-            {
-                timer = 0;
-                gameRunning = false;
-            }
-
-            timerText.text = "Time Left: " + Mathf.Round(timer).ToString();
+            countdownText.text = "Time Left: " + Mathf.Round(timer);
         }
-    }
-
-    void SpawnObject()
-    {
-        if (!gameRunning)
+        else
         {
-            return;
+            countdownText.text = "Time's up!";
         }
-
-        Vector3 randomSpawnPosition = new Vector3(Random.Range(spawnArea.bounds.min.x, spawnArea.bounds.max.x),
-                                                 Random.Range(spawnArea.bounds.min.y, spawnArea.bounds.max.y),
-                                                 Random.Range(spawnArea.bounds.min.z, spawnArea.bounds.max.z));
-
-        Instantiate(birdSpawn, randomSpawnPosition, Quaternion.identity);
     }
 
-    public void ObjectDestroyed()
+    IEnumerator SpawnObjectRandomly()
     {
-        destroyedObjects++;
-        //scoreText.text = "Destroyed: " + destroyedObjects.ToString();
-    }
+        while (timer > 0)
+        {
+            float randomX = Random.Range(spawnArea.bounds.min.x, spawnArea.bounds.max.x);
+            float randomY = Random.Range(spawnArea.bounds.min.y, spawnArea.bounds.max.y);
+            float randomZ = Random.Range(spawnArea.bounds.min.z, spawnArea.bounds.max.z);
 
-    public void StartGame()
-    {
-        gameRunning = true;
+            Vector3 spawnPosition = new Vector3(randomX, randomY, randomZ);
+            Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+
+            yield return new WaitForSeconds(Random.Range(0.5f, 1.5f)); // Random time delay between spawns
+        }
     }
 }

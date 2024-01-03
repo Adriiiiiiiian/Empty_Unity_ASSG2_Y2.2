@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Bhoomika/Scene B/Login Scene.unity
     guid: 5a317c617a7ef47b5a7e127e9b914c46
-  - enabled: 1
+  - enabled: 0
+    path: Assets/Bhoomika/Scene B/BirdGame.unity
+    guid: 0276332bf1d854c8ebbab6cf394ccf04
+  - enabled: 0
     path: Assets/Bhoomika/Scene B/Bird Game.unity
     guid: 6415df6530073407ca6bbb4ef586d286
   - enabled: 0
