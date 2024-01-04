@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19876337, g: 0.18344389, b: 0.14413401, a: 1}
+  m_IndirectSpecularColor: {r: 0.19890097, g: 0.18351579, b: 0.14408758, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -34259,7 +34259,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 607940371}
         m_TargetAssemblyTypeName: soundScript, Assembly-CSharp
-        m_MethodName: wrongPlay
+        m_MethodName: rightPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34269,7 +34269,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1432716996}
+      - m_Target: {fileID: 2082223712}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -98115,7 +98115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1988511607
 Transform:
   m_ObjectHideFlags: 0
@@ -121404,7 +121404,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 607940371}
         m_TargetAssemblyTypeName: soundScript, Assembly-CSharp
-        m_MethodName: rightPlay
+        m_MethodName: wrongPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -121414,7 +121414,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 2082223712}
+      - m_Target: {fileID: 1432716996}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6

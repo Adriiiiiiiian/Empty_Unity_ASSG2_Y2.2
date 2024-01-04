@@ -15,6 +15,9 @@ public class drinkorder : MonoBehaviour
     public GameObject pengDrink;
     public GameObject orderWrong;
     public GameObject hotdrink;
+    public GameObject correctUI;
+    public GameObject correctButton;
+    public GameObject previousStuff;
 
     public AudioSource wrongSound;
     public AudioSource rightSound;
@@ -25,8 +28,11 @@ public class drinkorder : MonoBehaviour
         {
             if (userInput.Contains("peng"))
             {
+                correctUI.SetActive(true);
+                correctButton.SetActive(true);
                 pengDrink.SetActive(true);
                 rightSound.Play();
+                previousStuff.SetActive(false);
 
             }
             else
