@@ -28,21 +28,16 @@ public class CollectAndPlace : MonoBehaviour
 
     public GameObject nextui;
     public GameObject playminigame;
+    public GameObject drinkui;
 
+    public GameObject meal;
 
-
+    public TextMeshProUGUI gameinstructions;
     public int count;
 
     public AudioSource audSource;
 
-    public void CollectGame()
-    {
-        if (square.transform.position == snap1.transform.position)
-        {
-            Debug.Log("DOOR OPEN");
-            door.SetActive(false);
-        }
-    }
+    
 
     public void AddRice()
     {
@@ -131,6 +126,16 @@ public class CollectAndPlace : MonoBehaviour
         playminigame.SetActive(true);
             
     }
+
+    public void ShowNextUI()
+    {
+        if (ricebool == true && chickenbool == true && veggiesbool == true && saucebool == true)
+        {
+            drinkui.SetActive(true);
+            playminigame.SetActive(false);
+
+        }
+    }
     void Start()
     {
         
@@ -139,10 +144,20 @@ public class CollectAndPlace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CollectGame();
+        
 
         ChangeWords();
 
+        if (ricebool == true)
+        {
+            gameinstructions.text = "Good! Now Continue to add the rest of the ingredients in the same way.";
+        }
+
+        if (ricebool == true && chickenbool == true && veggiesbool == true && saucebool == true)
+        {
+            gameinstructions.text = "Now click on your finished meal to head to the next section.";
+
+        }
 
     }
 }
