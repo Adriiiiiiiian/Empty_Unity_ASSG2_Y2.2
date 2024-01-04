@@ -18,6 +18,7 @@ public class drinkorder : MonoBehaviour
     public GameObject correctUI;
     public GameObject correctButton;
     public GameObject previousStuff;
+    public GameObject previousStuff1;
 
     public AudioSource wrongSound;
     public AudioSource rightSound;
@@ -33,6 +34,7 @@ public class drinkorder : MonoBehaviour
                 pengDrink.SetActive(true);
                 rightSound.Play();
                 previousStuff.SetActive(false);
+                previousStuff1.SetActive(false);
 
             }
             else

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19890097, g: 0.18351579, b: 0.14408758, a: 1}
+  m_IndirectSpecularColor: {r: 0.19876337, g: 0.18344389, b: 0.14413401, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -34335,7 +34335,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -50325,7 +50325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1657690795
 Transform:
   m_ObjectHideFlags: 0
@@ -56986,6 +56986,10 @@ MonoBehaviour:
   pengDrink: {fileID: 0}
   orderWrong: {fileID: 1243532192}
   hotdrink: {fileID: 0}
+  correctUI: {fileID: 0}
+  correctButton: {fileID: 0}
+  previousStuff: {fileID: 0}
+  previousStuff1: {fileID: 0}
   wrongSound: {fileID: 0}
   rightSound: {fileID: 0}
 --- !u!4 &1882260373
@@ -121314,7 +121318,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -121509,7 +121513,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 0}
-  _surface: {fileID: 0}
+  _surface: {fileID: 2145404880}
   _selectSurface: {fileID: 0}
   _movementProvider: {fileID: 0}
   _tiebreakerScore: 0
@@ -121525,7 +121529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2140d2b457bea84881488302059889b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collider: {fileID: 0}
+  _collider: {fileID: 2145404876}
 --- !u!224 &1919181478375284495 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2365699275386820658, guid: a5fbb6bbe49a5b1468628475dc75cc02,
