@@ -9,22 +9,20 @@ using UnityEngine;
 
 public class BirdController : MonoBehaviour
 {
-    public BirdGameManager gameManager; // Reference to the GameManager
+    //private GameObject birdScriptHolder;
+    private BirdGameManager gameManager; // Reference to the GameManager
     public GameObject bird;
 
-    /*void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("bird")) // Check for collision with projectile
-        {
-            gameManager.BirdHit(); // Notify GameManager of bird hit
-            Destroy(gameObject); // Destroy the bird
-        }
-    }*/
-
+    
     public void DestroyBird()
     {
-        gameManager.BirdHit(); // Notify GameManager of bird hit
-        bird.gameObject.SetActive(false);
-        //Destroy(gameObject); // Destroy the bird
+        gameManager = GameObject.FindGameObjectWithTag("birdmanager").GetComponent<BirdGameManager>();
+
+            gameManager.BirdHit(); // Notify GameManager of bird hit
+
+        bird.SetActive(false);
+        // Alternatively, if you want to destroy the bird
+        // Destroy(bird);
     }
 }
+

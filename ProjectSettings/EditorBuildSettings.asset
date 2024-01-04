@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Grace/scenes/tray.unity
+    guid: 54e143a465709b0469d8392fc5d07775
+  - enabled: 1
+    path: Assets/Grace/scenes/trivia scene.unity
+    guid: ee33d4753a3d1f34c9b52100a3f0e8ba
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: afaad25d97439a649b90757832f75cd0,
       type: 2}
