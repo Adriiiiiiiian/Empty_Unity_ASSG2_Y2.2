@@ -37,14 +37,7 @@ public class CollectAndPlace : MonoBehaviour
 
     public AudioSource audSource;
 
-    public void CollectGame()
-    {
-        if (square.transform.position == snap1.transform.position)
-        {
-            Debug.Log("DOOR OPEN");
-            door.SetActive(false);
-        }
-    }
+    
 
     public void AddRice()
     {
@@ -151,7 +144,7 @@ public class CollectAndPlace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CollectGame();
+        
 
         ChangeWords();
 

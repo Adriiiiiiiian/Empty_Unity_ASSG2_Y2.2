@@ -3188,13 +3188,13 @@ Transform:
   m_GameObject: {fileID: 737089611}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.44, y: 3.24, z: 3.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 740243151}
   - {fileID: 1632000762}
-  m_Father: {fileID: 1260201580}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &740243150
 GameObject:
@@ -5316,9 +5316,9 @@ MonoBehaviour:
   ricebool: 0
   nextui: {fileID: 1260201579}
   playminigame: {fileID: 1956086433}
-  drinkui: {fileID: 0}
-  meal: {fileID: 0}
-  gameinstructions: {fileID: 0}
+  drinkui: {fileID: 737089611}
+  meal: {fileID: 7973138679418334324}
+  gameinstructions: {fileID: 2052670592}
   count: 0
   audSource: {fileID: 1651027847}
 --- !u!4 &1023498503
@@ -6046,7 +6046,6 @@ Transform:
   m_Children:
   - {fileID: 781830416}
   - {fileID: 880393092}
-  - {fileID: 737089612}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1272625650
@@ -13291,7 +13290,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7114770129203096738}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 317e663e2bb60ea408fe22b908b59295, type: 3}
   m_Name: 
@@ -14096,6 +14095,7 @@ SceneRoots:
   - {fileID: 1651027848}
   - {fileID: 1023498503}
   - {fileID: 1351122244}
-  - {fileID: 1956086434}
   - {fileID: 1260201580}
+  - {fileID: 1956086434}
+  - {fileID: 737089612}
   - {fileID: 1697600042}
