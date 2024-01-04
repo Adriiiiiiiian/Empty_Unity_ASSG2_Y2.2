@@ -23,16 +23,17 @@ public class BirdGameManager : MonoBehaviour
     public GameObject birdPrefab; // Reference to the bird prefab
     public BoxCollider spawnArea; // Collider defining the spawn area
     public TMP_Text scoreText; // UI Text for displaying the score
+    public TMP_Text timerText; // UI Text for displaying the score
     public float gameDuration = 10f; // Game duration in seconds
 
     private int birdsHit = 0;
     private float timer;
     private bool gameRunning = false;
 
-    private void Start()
+    /*private void Start()
     {
         StartGame();
-    }
+    }*/
 
     void Update()
     {
@@ -47,6 +48,7 @@ public class BirdGameManager : MonoBehaviour
             }
 
             scoreText.text = "Birds Hit: " + birdsHit.ToString();
+            timerText.text = "Time Left: " + Mathf.Round(timer).ToString();
         }
     }
 
@@ -55,6 +57,7 @@ public class BirdGameManager : MonoBehaviour
         birdsHit = 0;
         timer = gameDuration;
         scoreText.text = "Birds Hit: " + birdsHit.ToString();
+        timerText.text = "Time Left: " + Mathf.Round(timer).ToString();
         gameRunning = true;
 
         InvokeRepeating("SpawnBird", 0f, 1.5f); // Start spawning birds at intervals
