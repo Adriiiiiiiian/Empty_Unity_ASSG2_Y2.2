@@ -40,11 +40,16 @@ public class AuthManager : MonoBehaviour
 
     //Text
     //public TMP_Text displayNameText;
+    public TMP_Text signupErrorText;
+    public TMP_Text loginErrorText;
+    public TMP_Text fpErrorText;
+
 
     private void Awake()
     {
         InitializeFirebase();
         mDatabaseref = FirebaseDatabase.DefaultInstance.RootReference;
+        
     }
 
     void InitializeFirebase()
@@ -64,6 +69,7 @@ public class AuthManager : MonoBehaviour
             if (task.IsFaulted || task.IsCanceled)
             {
                 Debug.LogError("ERROR: " + task.Exception);
+                signupErrorText.gameObject.SetActive(true);
             }
             if (task.IsCompleted)
             {
@@ -74,6 +80,7 @@ public class AuthManager : MonoBehaviour
                     //UpdatePlayerNickname(displayname);
                 }//UpdateDisplayName();
                 ShowDisplayName();
+                PlayGame();
                 Debug.LogFormat("Welcome back", newPlayer.UserId, newPlayer.Email);
 
 
@@ -129,11 +136,13 @@ public class AuthManager : MonoBehaviour
             if (task.IsFaulted || task.IsCanceled)
             {
                 Debug.LogError("ERROR: " + task.Exception);
+                loginErrorText.gameObject.SetActive(true);
             }
             else if (task.IsCompleted)
             {
                 FirebaseUser currentPlayer = task.Result.User;
                 ShowDisplayName();
+                PlayGame();
                 Debug.LogFormat("Welcome back", currentPlayer.UserId, currentPlayer.Email);
             }
         });
@@ -150,6 +159,7 @@ public class AuthManager : MonoBehaviour
             if (task.IsFaulted || task.IsCanceled)
             {
                 Debug.LogError("ERROR: " + task.Exception);
+                fpErrorText.gameObject.SetActive(true);
             }
             else if (task.IsCompleted)
             {
