@@ -39,8 +39,12 @@ public class drinkorder : MonoBehaviour
             }
             else
             {
+                correctUI.SetActive(true);
+                correctButton.SetActive(true);
                 hotdrink.SetActive(true);
                 rightSound.Play();
+                previousStuff.SetActive(false);
+                previousStuff1.SetActive(false);
             }
         }
         else

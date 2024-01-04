@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using Firebase;
 using Firebase.Database;
 using Firebase.Extensions;
@@ -20,13 +21,15 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class BirdGameManager : MonoBehaviour
 {
+    public AuthManager auth;
+
     public GameObject birdPrefab; // Reference to the bird prefab
     public BoxCollider spawnArea; // Collider defining the spawn area
     public TMP_Text scoreText; // UI Text for displaying the score
     public TMP_Text timerText; // UI Text for displaying the score
     public float gameDuration = 10f; // Game duration in seconds
 
-    private int birdsHit = 0;
+    private int score = 0;
     private float timer;
     private bool gameRunning = false;
 
@@ -47,16 +50,16 @@ public class BirdGameManager : MonoBehaviour
                 // Game over logic
             }
 
-            scoreText.text = "Birds Hit: " + birdsHit.ToString();
+            scoreText.text = "Birds Hit: " + score.ToString();
             timerText.text = "Time Left: " + Mathf.Round(timer).ToString();
         }
     }
 
     public void StartGame()
     {
-        birdsHit = 0;
+        score = 0;
         timer = gameDuration;
-        scoreText.text = "Birds Hit: " + birdsHit.ToString();
+        scoreText.text = "Birds Hit: " + score.ToString();
         timerText.text = "Time Left: " + Mathf.Round(timer).ToString();
         gameRunning = true;
 
@@ -77,6 +80,6 @@ public class BirdGameManager : MonoBehaviour
 
     public void BirdHit()
     {
-        birdsHit++;
+        score++;
     }
 }
