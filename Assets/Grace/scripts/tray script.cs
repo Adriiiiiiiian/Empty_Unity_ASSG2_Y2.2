@@ -18,6 +18,7 @@ public class trayscript : MonoBehaviour
     public GameObject newtray;
     public GameObject wrongMsg;
     public GameObject rightMsg;
+    public GameObject button;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,7 @@ public class trayscript : MonoBehaviour
         {
             firstMsg.SetActive(false);
             rightSound.Play();
+            button.SetActive(true);
             rightMsg.SetActive(true);
             wrongMsg.SetActive(false);
 
