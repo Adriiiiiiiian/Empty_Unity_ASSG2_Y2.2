@@ -138,18 +138,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7555764188264712272, guid: 444cc69ced54c80459782c1c18fb607b,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555764188264712272, guid: 444cc69ced54c80459782c1c18fb607b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555764188264712272, guid: 444cc69ced54c80459782c1c18fb607b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555764188264712272, guid: 444cc69ced54c80459782c1c18fb607b,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.51624
+      value: 0.197
       objectReference: {fileID: 0}
     - target: {fileID: 7555764188264712272, guid: 444cc69ced54c80459782c1c18fb607b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.227
+      value: 0.318
       objectReference: {fileID: 0}
     - target: {fileID: 7555764188264712272, guid: 444cc69ced54c80459782c1c18fb607b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.68
+      value: 0.49
       objectReference: {fileID: 0}
     - target: {fileID: 7555764188264712272, guid: 444cc69ced54c80459782c1c18fb607b,
         type: 3}
@@ -190,6 +205,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FlatUnityCanvas Variant Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076675314276241877, guid: 444cc69ced54c80459782c1c18fb607b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076675314276241877, guid: 444cc69ced54c80459782c1c18fb607b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076675314276241877, guid: 444cc69ced54c80459782c1c18fb607b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.97
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1565,7 +1595,7 @@ PrefabInstance:
     - target: {fileID: 666950340213143223, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.223
+      value: 1.86
       objectReference: {fileID: 0}
     - target: {fileID: 666950340213143223, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
