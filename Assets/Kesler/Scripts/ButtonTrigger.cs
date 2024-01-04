@@ -5,21 +5,18 @@ using UnityEngine;
 public class ButtonTrigger : MonoBehaviour
 {   
 
-    private Animator _buttonAnimator;
+    //private Animator _buttonAnimator;
     // Start is called before the first frame update
     void Start()
     {
-        _buttonAnimator = GetComponent<Animator>();
+       // _buttonAnimator = GetComponent<Animator>();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {   
-        if (other.gameObject.tag == "Player")
-        {
-            Debug.Log("Button Pressed");
-            _buttonAnimator.SetTrigger("ButtonPressed");
-            SpawnTissue();
-        }
+    public void OnRayInteract()
+    {
+        Debug.Log("Button Pressed via Ray");
+        //_buttonAnimator.SetTrigger("ButtonPressed");
+        SpawnTissue();
     }
 
     public void SpawnTissue()
