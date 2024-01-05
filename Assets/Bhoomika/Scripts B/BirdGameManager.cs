@@ -22,6 +22,10 @@ using UnityEngine.SocialPlatforms.Impl;
 public class BirdGameManager : MonoBehaviour
 {
     public AuthManager auth;
+    private AuthManager authCode;
+    public BirdFirebaseManager fireBaseMgr;
+
+    DatabaseReference mDatabaseref;
 
     public GameObject birdPrefab; // Reference to the bird prefab
     public BoxCollider spawnArea; // Collider defining the spawn area
@@ -30,13 +34,14 @@ public class BirdGameManager : MonoBehaviour
     public float gameDuration = 10f; // Game duration in seconds
 
     private int score = 0;
+    private int HighScore;
     private float timer;
     private bool gameRunning = false;
 
-    /*private void Start()
+    private void Start()
     {
-        StartGame();
-    }*/
+        mDatabaseref = FirebaseDatabase.DefaultInstance.RootReference;
+    }
 
     void Update()
     {
@@ -48,6 +53,7 @@ public class BirdGameManager : MonoBehaviour
                 timer = 0;
                 gameRunning = false;
                 // Game over logic
+                UpdatePlayerStat(this.HighScore);
             }
 
             scoreText.text = "Birds Hit: " + score.ToString();
@@ -81,5 +87,19 @@ public class BirdGameManager : MonoBehaviour
     public void BirdHit()
     {
         score++;
+    }
+
+    public void UpdatePlayerStat(int HighScore)
+    {
+
+        string userID = auth.GetUserID();
+        string displayName = auth.GetCurrentUserDisplayName();
+        int score = HighScore;
+        BirdFirebaseManager managerInstance = new BirdFirebaseManager();
+        managerInstance.UpdatePlayerStats(auth.GetCurrentUser().UserId, score, auth.GetCurrentUserDisplayName());
+
+
+
+        Debug.Log($"UserID: {userID}, DisplayName: {displayName}, Score: {score.ToString()}");
     }
 }
