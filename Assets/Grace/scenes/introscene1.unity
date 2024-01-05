@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.21750873, g: 0.23899135, b: 0.22164497, a: 1}
+  m_IndirectSpecularColor: {r: 0.21780781, g: 0.23938349, b: 0.22181879, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &6218231
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6218233}
+  - component: {fileID: 6218232}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &6218232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6218231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a470f83b81114ddb9722a2eb3ecf274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &6218233
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6218231}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.28809083, y: -0.18746856, z: 1.7102239}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &102728382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6016,13 +6060,28 @@ PrefabInstance:
     - target: {fileID: 1833129197506808981, guid: 444cc69ced54c80459782c1c18fb607b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1833129197506808981, guid: 444cc69ced54c80459782c1c18fb607b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5078403733526347837}
+      objectReference: {fileID: 6218232}
+    - target: {fileID: 1833129197506808981, guid: 444cc69ced54c80459782c1c18fb607b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Chope
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833129197506808981, guid: 444cc69ced54c80459782c1c18fb607b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChangeScene, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833129197506808981, guid: 444cc69ced54c80459782c1c18fb607b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3554354548743777231, guid: 444cc69ced54c80459782c1c18fb607b,
         type: 3}
       propertyPath: m_Name
@@ -6251,18 +6310,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5fbb6bbe49a5b1468628475dc75cc02, type: 3}
---- !u!114 &5078403733526347837 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3922152932869135321, guid: a5fbb6bbe49a5b1468628475dc75cc02,
-    type: 3}
-  m_PrefabInstance: {fileID: 5078403733526347836}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d050441b7696ea4ea199d91299193f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6199971204113718043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6351,3 +6398,4 @@ SceneRoots:
   - {fileID: 2011697669}
   - {fileID: 746832228}
   - {fileID: 1324310793}
+  - {fileID: 6218233}

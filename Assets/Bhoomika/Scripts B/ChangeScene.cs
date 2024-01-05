@@ -12,6 +12,11 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
+    public void menu()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     public void Chope()
     {
         SceneManager.LoadScene(3);
