@@ -1,5 +1,5 @@
 /*
- * Author: Grace Foo & Bhoomika 
+ * Author: Bhoomika & Grace  
  * Date: 2/11/2023
  * Description: handles all the firebase things
  */
@@ -24,8 +24,9 @@ public class BirdFirebaseManager : MonoBehaviour
     //DatabaseReference dbPlayerBase;
     Firebase.Auth.FirebaseAuth auth1;
 
-    public TMP_InputField newName;
-    public Button newBtnName;
+    //public TMP_InputField newName;
+    //public Button newBtnName;
+    //public TMP_Text test;
 
     public void Awake()
     {
@@ -88,11 +89,13 @@ public class BirdFirebaseManager : MonoBehaviour
             }
             else if (task.IsCompleted)
             {
+                //test.text = "Updated FB";
                 Debug.Log(uuid + "before datasnapshot");
                 DataSnapshot playerStats = task.Result;
                 Debug.Log(uuid + "after datasnapshot");
                 if (playerStats.Exists)
                 {
+                    //test.text = "Updated FB";
                     Debug.Log("exits???");
                     //updates if there is someting
                     BirdStatPlayer sp = JsonUtility.FromJson<BirdStatPlayer>(playerStats.GetRawJsonValue());
@@ -111,6 +114,7 @@ public class BirdFirebaseManager : MonoBehaviour
                 }
                 else
                 {
+                    //test.text = "Updated FB";
                     Debug.Log("newww");
                     //creates new stats if there is no player inside
                     BirdStatPlayer sp = new BirdStatPlayer(displayname, score);

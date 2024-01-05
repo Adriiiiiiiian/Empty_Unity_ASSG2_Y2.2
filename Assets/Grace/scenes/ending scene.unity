@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.21780781, g: 0.23938349, b: 0.22181879, a: 1}
+  m_IndirectSpecularColor: {r: 0.21750873, g: 0.23899135, b: 0.22164497, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1630,7 +1630,7 @@ PrefabInstance:
     - target: {fileID: 1219297423871694359, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
       propertyPath: m_text
-      value: Correct, all hawkers accept cash, not credit card
+      value: Correct, all hawkers accept cash, not credit card.
       objectReference: {fileID: 0}
     - target: {fileID: 1219297423871694359, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
@@ -1702,7 +1702,7 @@ PrefabInstance:
     - target: {fileID: 3711631195299468335, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
       propertyPath: m_text
-      value: credit card
+      value: Credit card
       objectReference: {fileID: 0}
     - target: {fileID: 3711631195299468335, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
@@ -1724,7 +1724,7 @@ PrefabInstance:
     - target: {fileID: 3782562295097424215, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
       propertyPath: m_text
-      value: physical Singaporen cash
+      value: Physical Singaporen cash
       objectReference: {fileID: 0}
     - target: {fileID: 3782562295097424215, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
@@ -1756,7 +1756,7 @@ PrefabInstance:
     - target: {fileID: 4761143291038872941, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
       propertyPath: m_text
-      value: Wrong, all hawkers accept cash, not credit card
+      value: Wrong, all hawkers accept cash, not credit card.
       objectReference: {fileID: 0}
     - target: {fileID: 4761143291038872941, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
@@ -3205,10 +3205,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You successfully went through a hawker experience. If you enjoyed this
-    you could play it again to increase your high scores or get achievements. Or
-    maybe you could come to Singapore to use these skills to the real test and to
-    truly enjoy the hawker experience! '
+  m_text: You have successfully gone through a hawker experience. Play again to beat
+    your current high score! We hope that you have enjoyed this experience.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5eb3a46400da4774bad4618a0f2ad037, type: 2}
   m_sharedMaterial: {fileID: 1605635930632670031, guid: 5eb3a46400da4774bad4618a0f2ad037,
@@ -3435,8 +3433,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: (hover over the models to see your options, select the one you think is
-    correct)
+  m_text: (Hover over the models to see your options, select the one you think is
+    correct.)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5eb3a46400da4774bad4618a0f2ad037, type: 2}
   m_sharedMaterial: {fileID: 1605635930632670031, guid: 5eb3a46400da4774bad4618a0f2ad037,
@@ -4873,7 +4871,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Dishes arranged on a single plate with rice '
+  m_text: Dishes arranged on a single plate with rice.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5eb3a46400da4774bad4618a0f2ad037, type: 2}
   m_sharedMaterial: {fileID: 1605635930632670031, guid: 5eb3a46400da4774bad4618a0f2ad037,
@@ -5137,9 +5135,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Wrong, Cai Fan is a bunch of dishes arranged on a single plate of rice,
-    where you can pick between what meat, vegetables and other options you want on
-    it. Cai fan is quite a popular dish within Singaporeans, lets try to order it
-    shall we?
+    where you can pick between what meat, vegetables and other options chosen. Cai
+    fan is quite a popular dish within Singaporeans, lets try to order it shall we?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5eb3a46400da4774bad4618a0f2ad037, type: 2}
   m_sharedMaterial: {fileID: 1605635930632670031, guid: 5eb3a46400da4774bad4618a0f2ad037,
@@ -5857,7 +5854,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Each dish served in separate bowls
+  m_text: Each dish served in separate bowls.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5eb3a46400da4774bad4618a0f2ad037, type: 2}
   m_sharedMaterial: {fileID: 1605635930632670031, guid: 5eb3a46400da4774bad4618a0f2ad037,

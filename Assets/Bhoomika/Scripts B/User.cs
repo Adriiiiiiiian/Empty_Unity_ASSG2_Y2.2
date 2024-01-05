@@ -1,5 +1,5 @@
 /*
- * Author: Grace Foo & Bhoomika 
+ * Author: Bhoomika & Grace  
  * Date: 2/1/2024
  * Description: handles all the firebase things
  */

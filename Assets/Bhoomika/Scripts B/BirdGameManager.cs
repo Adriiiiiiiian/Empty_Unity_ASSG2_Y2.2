@@ -1,6 +1,6 @@
 /*
- * Author: Grace Foo & Bhoomika 
- * Date: /1/2024
+ * Author: Bhoomika & Grace  
+ * Date: 3/1/2024
  * Description: handles all the firebase things (leaderboard & VR game)
  */
 using System.Collections;
@@ -21,9 +21,10 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class BirdGameManager : MonoBehaviour
 {
-    public AuthManager auth;
+    private AuthManager auth;
     private AuthManager authCode;
-    public BirdFirebaseManager fireBaseMgr;
+    private BirdFirebaseManager fireBaseMgr;
+    public AudioSource sound;
 
     DatabaseReference mDatabaseref;
 
@@ -32,6 +33,7 @@ public class BirdGameManager : MonoBehaviour
     public TMP_Text scoreText; // UI Text for displaying the score
     public TMP_Text timerText; // UI Text for displaying the score
     public float gameDuration = 10f; // Game duration in seconds
+    //public TMP_Text test; 
 
     private int score = 0;
     private int HighScore;
@@ -54,6 +56,7 @@ public class BirdGameManager : MonoBehaviour
                 gameRunning = false;
                 // Game over logic
                 UpdatePlayerStat(this.HighScore);
+                //test.text = "Updated FB";
             }
 
             scoreText.text = "Birds Hit: " + score.ToString();

@@ -38,6 +38,9 @@ public class AuthManager : MonoBehaviour
     //public GameObject playGameBtn;
     public GameObject forgotPasswordBtn;
 
+    //Audio
+    public AudioSource sound;
+
     //Text
     //public TMP_Text displayNameText;
     public TMP_Text signupErrorText;
@@ -231,8 +234,11 @@ public class AuthManager : MonoBehaviour
         if (auth.CurrentUser != null)
         {
             auth.SignOut();
-
         }
+    }
+    public void PlaySound()
+    {
+        sound.Play();
     }
 
     public void PlayGame()

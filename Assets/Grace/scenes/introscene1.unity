@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.21780781, g: 0.23938349, b: 0.22181879, a: 1}
+  m_IndirectSpecularColor: {r: 0.21750873, g: 0.23899135, b: 0.22164497, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1522,7 +1522,7 @@ PrefabInstance:
     - target: {fileID: 1219297423871694359, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
       propertyPath: m_text
-      value: Correct, all hawkers accept cash, not credit card
+      value: Correct, all hawkers accept cash, not credit card.
       objectReference: {fileID: 0}
     - target: {fileID: 1219297423871694359, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
@@ -1594,7 +1594,7 @@ PrefabInstance:
     - target: {fileID: 3711631195299468335, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
       propertyPath: m_text
-      value: credit card
+      value: Credit card
       objectReference: {fileID: 0}
     - target: {fileID: 3711631195299468335, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
@@ -1616,7 +1616,7 @@ PrefabInstance:
     - target: {fileID: 3782562295097424215, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
       propertyPath: m_text
-      value: physical Singaporen cash
+      value: Physical Singaporen cash
       objectReference: {fileID: 0}
     - target: {fileID: 3782562295097424215, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
@@ -1648,7 +1648,7 @@ PrefabInstance:
     - target: {fileID: 4761143291038872941, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
       propertyPath: m_text
-      value: Wrong, all hawkers accept cash, not credit card
+      value: Wrong, all hawkers accept cash, not credit card.
       objectReference: {fileID: 0}
     - target: {fileID: 4761143291038872941, guid: fef73a0661293bc44a56b509e2cc59cf,
         type: 3}
