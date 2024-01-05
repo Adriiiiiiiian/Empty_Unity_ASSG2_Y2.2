@@ -11,6 +11,8 @@ public class soundScript : MonoBehaviour
 {
     public AudioSource wrongSound;
     public AudioSource rightSound;
+
+    public AudioSource eatSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,5 +31,10 @@ public class soundScript : MonoBehaviour
     public void rightPlay()
     {
         rightSound.Play();
+    }
+
+    public void eatPlay()
+    {
+        eatSound.Play();
     }
 }
