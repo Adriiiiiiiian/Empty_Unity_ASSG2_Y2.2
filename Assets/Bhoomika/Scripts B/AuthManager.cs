@@ -38,6 +38,10 @@ public class AuthManager : MonoBehaviour
     //public GameObject playGameBtn;
     public GameObject forgotPasswordBtn;
 
+    //Page
+    public GameObject fpPage;
+    public GameObject fpSuccessPage;
+
     //Audio
     public AudioSource sound;
 
@@ -47,7 +51,7 @@ public class AuthManager : MonoBehaviour
     public TMP_Text loginErrorText;
     public TMP_Text fpErrorText;
 
-
+    //Start firebases
     private void Awake()
     {
         InitializeFirebase();
@@ -55,38 +59,49 @@ public class AuthManager : MonoBehaviour
         
     }
 
+    //Start firebases
     void InitializeFirebase()
     {
         auth = FirebaseAuth.DefaultInstance;
     }
 
+    //Sign up user
     public void SignUpNewUser()
     {
+        //Change input to string
         string signupemail = signupEmailInput.text.Trim();
         string signuppassword = signupPasswordInput.text.Trim();
         string displayname = addDisplayNameInput.text.Trim();
         //displayNameText.text = "signing up user.";
         //Debug.Log("SignUpUser func working" + "displayname: " + displayname);
 
+        //Sign up user with firebase func
         auth.CreateUserWithEmailAndPasswordAsync(signupemail, signuppassword).ContinueWithOnMainThread(task =>
         {
             if (task.IsFaulted || task.IsCanceled)
             {
                 Debug.LogError("ERROR: " + task.Exception);
                 //displayNameText.text = "error in signing up user.";
+
+                //Alerts user that signup failed via text active on screen
                 signupErrorText.gameObject.SetActive(true);
             }
             if (task.IsCompleted)
             {
                 //displayNameText.text = "completed signing up user.";
+
+                //Returns user
                 FirebaseUser newPlayer = task.Result.User;
                 if (auth.CurrentUser != null)
                 {
+                    //Creates user in realtime database under "players", using string values inputed
                     CreateUser(GetCurrentUser().UserId, newPlayer.Email, displayname);
                     //UpdatePlayerNickname(displayname);
                 }
                 //UpdateDisplayName();
                 ShowDisplayName();
+
+                //Change scene to main menu
                 PlayGame();
                 Debug.LogFormat("Welcome back", newPlayer.UserId, newPlayer.Email);
 
@@ -95,6 +110,7 @@ public class AuthManager : MonoBehaviour
         });
     }
 
+    //Create user in realtime database code
     public void CreateUser(string uuid, string signupemail, string DisplayName)
     {
         User player = new User(DisplayName, signupemail);
@@ -106,10 +122,13 @@ public class AuthManager : MonoBehaviour
         Debug.Log("Database");
     }
 
+    //Returns user
     public FirebaseUser GetCurrentUser()
     {
         return auth.CurrentUser;
     }
+
+    //Gets UUID
     public string GetUserID()
     {
         if (auth.CurrentUser == null)
@@ -119,6 +138,7 @@ public class AuthManager : MonoBehaviour
         return auth.CurrentUser.UserId;
     }
 
+    //Gets auth display name
     public string GetCurrentUserDisplayName()
     {
         if (auth.CurrentUser != null)
@@ -132,45 +152,61 @@ public class AuthManager : MonoBehaviour
         }
     }
 
+    //Logs in user
     public void LogInNewUser()
     {
+        //Changes the input to string
         string loginemail = loginEmailInput.text.Trim();
         string loginpassword = loginPasswordInput.text.Trim();
         Debug.Log("LogInUser func working");
 
+        //Users firebase func to sign in
         auth.SignInWithEmailAndPasswordAsync(loginemail, loginpassword).ContinueWithOnMainThread(task =>
         {
             if (task.IsFaulted || task.IsCanceled)
             {
                 Debug.LogError("ERROR: " + task.Exception);
+
+                //Alerts user that signup failed via text active on screen
                 loginErrorText.gameObject.SetActive(true);
             }
             else if (task.IsCompleted)
             {
+                //Returns user
                 FirebaseUser currentPlayer = task.Result.User;
                 ShowDisplayName();
+
+                //Change scene to main menu
                 PlayGame();
                 Debug.LogFormat("Welcome back", currentPlayer.UserId, currentPlayer.Email);
             }
         });
     }
 
-
-
+    //Forget password func
     public void ForgetPassword()
     {
+        //Change input to string
         string fpemail = loginEmailInput.text.Trim();
 
+        //Uses firebase function
         auth.SendPasswordResetEmailAsync(fpemail).ContinueWithOnMainThread(task =>
         {
             if (task.IsFaulted || task.IsCanceled)
             {
                 Debug.LogError("ERROR: " + task.Exception);
+
+                //Alerts user that signup failed via text active on screen
                 fpErrorText.gameObject.SetActive(true);
             }
             else if (task.IsCompleted)
             {
+                //Successful
                 Debug.Log("Password reset sent");
+
+                //Change pages if successful to alert user that successful
+                fpPage.gameObject.SetActive(false);
+                fpSuccessPage.gameObject.SetActive(true);
             }
 
         });
@@ -224,11 +260,13 @@ public class AuthManager : MonoBehaviour
         return "Display Name: " + auth.CurrentUser.DisplayName;
     }
 
+    //Checks for user
     public bool IsUserLoggedIn()
     {
         return auth.CurrentUser != null;
     }
 
+    //Sign out (not used in the scene)
     public void SignOutUser()
     {
         if (auth.CurrentUser != null)
@@ -236,11 +274,14 @@ public class AuthManager : MonoBehaviour
             auth.SignOut();
         }
     }
+
+    //Play audio
     public void PlaySound()
     {
         sound.Play();
     }
 
+    //Change scene upon login/signup
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
