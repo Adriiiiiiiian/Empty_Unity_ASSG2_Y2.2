@@ -272,7 +272,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1857219758}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: PlayChopeGame
+        m_MethodName: Intro
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5687,6 +5687,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bcd3a39fc01431db6019f0fd6f210a, type: 3}
+--- !u!82 &1834499477 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1859059797881819569, guid: 83bcd3a39fc01431db6019f0fd6f210a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1834499476}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1837863508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5936,18 +5942,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1747056485}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1857219758}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: SignOutUser
@@ -6040,7 +6034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 2080336368}
-  sound: {fileID: 0}
+  sound: {fileID: 1834499477}
 --- !u!4 &1857219759
 Transform:
   m_ObjectHideFlags: 0
@@ -6403,7 +6397,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ...
+  m_text: Welcome to the experience. Use the Trigger to select items. Make sure you
+    are in contact and use Grip to grab items!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5eb3a46400da4774bad4618a0f2ad037, type: 2}
   m_sharedMaterial: {fileID: 1605635930632670031, guid: 5eb3a46400da4774bad4618a0f2ad037,
@@ -6431,8 +6426,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
