@@ -24,7 +24,7 @@ public class BirdGameManager : MonoBehaviour
     private AuthManager auth;
     private AuthManager authCode;
     private BirdFirebaseManager fireBaseMgr;
-    public AudioSource sound;
+    //public AudioSource sound;
 
     DatabaseReference mDatabaseref;
 
@@ -32,6 +32,7 @@ public class BirdGameManager : MonoBehaviour
     public BoxCollider spawnArea; // Collider defining the spawn area
     public TMP_Text scoreText; // UI Text for displaying the score
     public TMP_Text timerText; // UI Text for displaying the score
+    public GameObject nextBtn; // UI Text for displaying the score
     public float gameDuration = 10f; // Game duration in seconds
     //public TMP_Text test; 
 
@@ -57,6 +58,7 @@ public class BirdGameManager : MonoBehaviour
                 // Game over logic
                 UpdatePlayerStat(this.HighScore);
                 //test.text = "Updated FB";
+                nextBtn.gameObject.SetActive(true);
             }
 
             scoreText.text = "Birds Hit: " + score.ToString();
