@@ -9,6 +9,7 @@ TagManager:
   - rtray
   - bird
   - birdmanager
+  - Table
   layers:
   - Default
   - TransparentFX

@@ -5,17 +5,9 @@ using UnityEngine;
 public class ButtonTrigger : MonoBehaviour
 {   
 
-    //private Animator _buttonAnimator;
-    // Start is called before the first frame update
-    void Start()
-    {
-       // _buttonAnimator = GetComponent<Animator>();
-    }
-
     public void OnRayInteract()
     {
         Debug.Log("Button Pressed via Ray");
-        //_buttonAnimator.SetTrigger("ButtonPressed");
         SpawnTissue();
     }
 
@@ -27,4 +19,5 @@ public class ButtonTrigger : MonoBehaviour
         sphere.transform.localPosition = new Vector3(0, 1, 2);
         sphere.AddComponent<Rigidbody>();
     }
+
 }
