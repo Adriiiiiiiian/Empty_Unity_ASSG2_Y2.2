@@ -12,10 +12,11 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public void menu()
+    /*public void menu()
     {
         SceneManager.LoadScene(1);
-    }
+        //used in auth script
+    }*/
 
     public void Chope()
     {

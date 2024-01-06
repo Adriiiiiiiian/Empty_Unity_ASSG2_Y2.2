@@ -38,21 +38,13 @@ public class AuthManager : MonoBehaviour
     //public GameObject playGameBtn;
     public GameObject forgotPasswordBtn;
 
-    //Audio
-    public AudioSource sound;
-
     //Text
     //public TMP_Text displayNameText;
-    public TMP_Text signupErrorText;
-    public TMP_Text loginErrorText;
-    public TMP_Text fpErrorText;
-
 
     private void Awake()
     {
         InitializeFirebase();
         mDatabaseref = FirebaseDatabase.DefaultInstance.RootReference;
-        
     }
 
     void InitializeFirebase()
@@ -65,29 +57,23 @@ public class AuthManager : MonoBehaviour
         string signupemail = signupEmailInput.text.Trim();
         string signuppassword = signupPasswordInput.text.Trim();
         string displayname = addDisplayNameInput.text.Trim();
-        //displayNameText.text = "signing up user.";
-        //Debug.Log("SignUpUser func working" + "displayname: " + displayname);
+        Debug.Log("SignUpUser func working" + "displayname: " + displayname);
 
         auth.CreateUserWithEmailAndPasswordAsync(signupemail, signuppassword).ContinueWithOnMainThread(task =>
         {
             if (task.IsFaulted || task.IsCanceled)
             {
                 Debug.LogError("ERROR: " + task.Exception);
-                //displayNameText.text = "error in signing up user.";
-                signupErrorText.gameObject.SetActive(true);
             }
             if (task.IsCompleted)
             {
-                //displayNameText.text = "completed signing up user.";
                 FirebaseUser newPlayer = task.Result.User;
                 if (auth.CurrentUser != null)
                 {
                     CreateUser(GetCurrentUser().UserId, newPlayer.Email, displayname);
                     //UpdatePlayerNickname(displayname);
-                }
-                //UpdateDisplayName();
+                }//UpdateDisplayName();
                 ShowDisplayName();
-                PlayGame();
                 Debug.LogFormat("Welcome back", newPlayer.UserId, newPlayer.Email);
 
 
@@ -143,13 +129,11 @@ public class AuthManager : MonoBehaviour
             if (task.IsFaulted || task.IsCanceled)
             {
                 Debug.LogError("ERROR: " + task.Exception);
-                loginErrorText.gameObject.SetActive(true);
             }
             else if (task.IsCompleted)
             {
                 FirebaseUser currentPlayer = task.Result.User;
                 ShowDisplayName();
-                PlayGame();
                 Debug.LogFormat("Welcome back", currentPlayer.UserId, currentPlayer.Email);
             }
         });
@@ -166,7 +150,6 @@ public class AuthManager : MonoBehaviour
             if (task.IsFaulted || task.IsCanceled)
             {
                 Debug.LogError("ERROR: " + task.Exception);
-                fpErrorText.gameObject.SetActive(true);
             }
             else if (task.IsCompleted)
             {
@@ -180,7 +163,7 @@ public class AuthManager : MonoBehaviour
     {
         if (IsUserLoggedIn())
         {
-            //Debug.Log("worked");
+            Debug.Log("worked");
             //displayNameText.text = GetUserProfile();
             //displayNameUpdateInput.text = auth.CurrentUser.DisplayName;
         }
@@ -234,11 +217,8 @@ public class AuthManager : MonoBehaviour
         if (auth.CurrentUser != null)
         {
             auth.SignOut();
+
         }
-    }
-    public void PlaySound()
-    {
-        sound.Play();
     }
 
     public void PlayGame()

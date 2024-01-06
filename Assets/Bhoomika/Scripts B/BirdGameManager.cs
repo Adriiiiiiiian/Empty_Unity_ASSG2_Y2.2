@@ -34,6 +34,8 @@ public class BirdGameManager : MonoBehaviour
     public TMP_Text timerText; // UI Text for displaying the score
     public GameObject nextBtn; // UI Text for displaying the score
     public float gameDuration = 10f; // Game duration in seconds
+    public GameObject hTP;
+
     //public TMP_Text test; 
 
     private int score = 0;
@@ -68,6 +70,7 @@ public class BirdGameManager : MonoBehaviour
 
     public void StartGame()
     {
+        hTP.gameObject.SetActive(false);
         score = 0;
         timer = gameDuration;
         scoreText.text = "Birds Hit: " + score.ToString();
