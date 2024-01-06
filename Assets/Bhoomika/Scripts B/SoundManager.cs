@@ -36,20 +36,6 @@ public class SoundManager : MonoBehaviour
         auth = FirebaseAuth.DefaultInstance;
     }
 
-    public void Intro()
-    {
-        SceneManager.LoadScene(2);
-    }
-
-    public void SignOutUser()
-    {
-        if (auth.CurrentUser != null)
-        {
-            auth.SignOut();
-            SceneManager.LoadScene(0);
-        }
-    }
-
     public void ChangeVolume()
     {
         AudioListener.volume = volumeSlider.value;
@@ -64,5 +50,19 @@ public class SoundManager : MonoBehaviour
     private void Save()
     {
         PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);
+    }
+
+    public void Intro()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void SignOutUser()
+    {
+        if (auth.CurrentUser != null)
+        {
+            auth.SignOut();
+            SceneManager.LoadScene(0);
+        }
     }
 }
