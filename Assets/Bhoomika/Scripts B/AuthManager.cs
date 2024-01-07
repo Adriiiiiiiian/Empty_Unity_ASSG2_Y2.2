@@ -3,6 +3,7 @@
  * Date: 21/12/2023
  * Description: Authentication for Unity consisting of Sign up, Login and Forget password.
  */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,33 +42,46 @@ public class AuthManager : MonoBehaviour
     //Text
     //public TMP_Text displayNameText;
 
+    //Page
+    public GameObject fPDonePage;
+    public GameObject fPPage;
+
+    //Initialize firebases
     private void Awake()
     {
         InitializeFirebase();
         mDatabaseref = FirebaseDatabase.DefaultInstance.RootReference;
     }
 
+    //Initialize firebases
     void InitializeFirebase()
     {
         auth = FirebaseAuth.DefaultInstance;
     }
 
+    //Sign up new user function
     public void SignUpNewUser()
     {
+        //User input converted to string 
         string signupemail = signupEmailInput.text.Trim();
         string signuppassword = signupPasswordInput.text.Trim();
         string displayname = addDisplayNameInput.text.Trim();
         Debug.Log("SignUpUser func working" + "displayname: " + displayname);
 
+        //Firebase function to create account using email and password
         auth.CreateUserWithEmailAndPasswordAsync(signupemail, signuppassword).ContinueWithOnMainThread(task =>
         {
             if (task.IsFaulted || task.IsCanceled)
             {
+                //To show error
                 Debug.LogError("ERROR: " + task.Exception);
             }
             if (task.IsCompleted)
             {
+                //Returns user
                 FirebaseUser newPlayer = task.Result.User;
+
+                //Create user details under 'players' in realtime database if there is user
                 if (auth.CurrentUser != null)
                 {
                     CreateUser(GetCurrentUser().UserId, newPlayer.Email, displayname);
@@ -76,11 +90,13 @@ public class AuthManager : MonoBehaviour
                 ShowDisplayName();
                 Debug.LogFormat("Welcome back", newPlayer.UserId, newPlayer.Email);
 
-
+                //Change scene 
+                PlayGame();
             }
         });
     }
 
+    //Creates user details using UUID in realtime database under 'players'
     public void CreateUser(string uuid, string signupemail, string DisplayName)
     {
         User player = new User(DisplayName, signupemail);
@@ -92,10 +108,12 @@ public class AuthManager : MonoBehaviour
         Debug.Log("Database");
     }
 
+    //Returns user
     public FirebaseUser GetCurrentUser()
     {
         return auth.CurrentUser;
     }
+
     public string GetUserID()
     {
         if (auth.CurrentUser == null)
@@ -118,12 +136,15 @@ public class AuthManager : MonoBehaviour
         }
     }
 
+    //Log in user function
     public void LogInNewUser()
     {
+        //User input converted to string 
         string loginemail = loginEmailInput.text.Trim();
         string loginpassword = loginPasswordInput.text.Trim();
         Debug.Log("LogInUser func working");
 
+        //Firebase function to create account using email and password
         auth.SignInWithEmailAndPasswordAsync(loginemail, loginpassword).ContinueWithOnMainThread(task =>
         {
             if (task.IsFaulted || task.IsCanceled)
@@ -132,19 +153,24 @@ public class AuthManager : MonoBehaviour
             }
             else if (task.IsCompleted)
             {
+                //Returns user
                 FirebaseUser currentPlayer = task.Result.User;
                 ShowDisplayName();
                 Debug.LogFormat("Welcome back", currentPlayer.UserId, currentPlayer.Email);
+
+                //Change scene 
+                PlayGame();
             }
         });
     }
 
-
-
+    //Forget password function
     public void ForgetPassword()
     {
-        string fpemail = loginEmailInput.text.Trim();
+        //User input converted to string 
+        string fpemail = fpEmailInput.text.Trim();
 
+        //Firebase function to create account using email and password
         auth.SendPasswordResetEmailAsync(fpemail).ContinueWithOnMainThread(task =>
         {
             if (task.IsFaulted || task.IsCanceled)
@@ -154,6 +180,8 @@ public class AuthManager : MonoBehaviour
             else if (task.IsCompleted)
             {
                 Debug.Log("Password reset sent");
+                fPDonePage.gameObject.SetActive(true);
+                fPPage.gameObject.SetActive(false);
             }
 
         });
@@ -212,6 +240,7 @@ public class AuthManager : MonoBehaviour
         return auth.CurrentUser != null;
     }
 
+    //Not used
     public void SignOutUser()
     {
         if (auth.CurrentUser != null)
@@ -221,6 +250,7 @@ public class AuthManager : MonoBehaviour
         }
     }
 
+    //Change scene to main menu
     public void PlayGame()
     {
         SceneManager.LoadScene(1);

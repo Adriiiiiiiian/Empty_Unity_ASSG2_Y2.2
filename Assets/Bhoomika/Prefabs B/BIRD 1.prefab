@@ -261,4 +261,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e25121d0f241e4340b281e992beac8c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bird: {fileID: 0}
+  bird: {fileID: 5697116622865180439}

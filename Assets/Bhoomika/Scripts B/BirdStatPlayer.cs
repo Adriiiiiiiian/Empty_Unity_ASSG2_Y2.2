@@ -9,6 +9,7 @@ using UnityEngine;
 
 public class BirdStatPlayer 
 {
+    //Declare variables
     public string displayname;
     public int score;
 
@@ -17,12 +18,14 @@ public class BirdStatPlayer
         //
     }
 
+    //Declaration
     public BirdStatPlayer(string DisplayName, int score)
     {
         this.displayname = displayname;
         this.score = score;
     }
 
+    //To Json
     public string BirdStatPlayerToJson()
     {
         return JsonUtility.ToJson(this);

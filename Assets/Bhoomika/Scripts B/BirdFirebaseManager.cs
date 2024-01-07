@@ -19,21 +19,19 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class BirdFirebaseManager : MonoBehaviour
 {
+    //Database ref
     DatabaseReference dbStatRef;
     DatabaseReference dbLeaderboardRef;
-    //DatabaseReference dbPlayerBase;
     Firebase.Auth.FirebaseAuth auth1;
 
-    //public TMP_InputField newName;
-    //public Button newBtnName;
-    //public TMP_Text test;
-
+    //Initialize firebases
     public void Awake()
     {
         InitializeFirebase();
         auth1 = FirebaseAuth.DefaultInstance;
     }
 
+    //Initialize firebases
     public void InitializeFirebase()
     {
         //dbPlayerBase = FirebaseDatabase.DefaultInstance.GetReference("players");
@@ -41,6 +39,7 @@ public class BirdFirebaseManager : MonoBehaviour
         dbLeaderboardRef = FirebaseDatabase.DefaultInstance.GetReference("leaderboardbird");
     }
 
+    //Get player details
     public async Task<BirdStatPlayer> GetPlayerStat(string uuid)
     {
         Query q = dbStatRef.Child(uuid).LimitToFirst(1);
@@ -53,7 +52,10 @@ public class BirdFirebaseManager : MonoBehaviour
             }
             else if (task.IsCompleted)
             {
+                //Recieve data
                 DataSnapshot ds = task.Result;
+
+                //Returns player
                 if (ds.Child(uuid).Exists)
                 {
                     p = JsonUtility.FromJson<BirdStatPlayer>(ds.Child(uuid).GetRawJsonValue());
@@ -65,10 +67,12 @@ public class BirdFirebaseManager : MonoBehaviour
         });
         return p;
     }
-    /// looks into the database checks if there is anything inside, if there isnt, add base data, if there is, if the highscore is larger than in the database, updates new score
+
+    // Checks database for information, and if there is no data, adds data inside
+    // If have, updates if highscore is more that current score
     public void UpdatePlayerStats(string uuid, int score, string displayname)
     {
-
+        //Refers to db child
         Query playerQuery = dbStatRef.Child(uuid);
         Debug.Log("CHILD");
         Debug.Log(uuid);
@@ -89,52 +93,52 @@ public class BirdFirebaseManager : MonoBehaviour
             }
             else if (task.IsCompleted)
             {
+                //Recieves data
                 //test.text = "Updated FB";
-                Debug.Log(uuid + "before datasnapshot");
                 DataSnapshot playerStats = task.Result;
-                Debug.Log(uuid + "after datasnapshot");
+
+                //Check for player stats
                 if (playerStats.Exists)
                 {
                     //test.text = "Updated FB";
-                    Debug.Log("exits???");
-                    //updates if there is someting
+
+                    //Refers to player stat
                     BirdStatPlayer sp = JsonUtility.FromJson<BirdStatPlayer>(playerStats.GetRawJsonValue());
-                    Debug.Log("scoreeee");
+
+                    //Compares current score to highest score from players past data
                     if (score > sp.score)
                     {
-                        ///if the new score is higher than the score inside the database, it upates it
+                        //If the new score is higher than the score inside the database, it updates score
                         sp.score = score;
                         UpdatePlayerLeaderBoard(uuid, sp.score);
                         dbStatRef.Child(uuid).Child("score").SetValueAsync(score);
-                        //dbPlayerBase.Child(uuid).Child("HighScore").SetValueAsync(score);
-                        Debug.Log("helloooooo");
-
                     }
+
+                    //Updates to database
                     dbStatRef.Child(uuid).SetPriorityAsync(sp.BirdStatPlayerToJson());
                 }
                 else
                 {
                     //test.text = "Updated FB";
-                    Debug.Log("newww");
-                    //creates new stats if there is no player inside
-                    BirdStatPlayer sp = new BirdStatPlayer(displayname, score);
-                    BirdLeaderboardStat lb = new BirdLeaderboardStat(displayname, score);//(displayName, score);
 
+                    //Creates new stats if there is no data is inside
+                    BirdStatPlayer sp = new BirdStatPlayer(displayname, score);
+                    BirdLeaderboardStat lb = new BirdLeaderboardStat(displayname, score);
+
+                    //Updates database
                     dbStatRef.Child(uuid).SetRawJsonValueAsync(sp.BirdStatPlayerToJson());
                     dbLeaderboardRef.Child(uuid).SetRawJsonValueAsync(lb.BirdLeaderboardStatToJson());
                 }
             }
         });
     }
-    /// <summary>
-    ///updates new info into the leaderboard database
-    /// </summary>
-    /// <param name="uuid"></param>
-    /// <param name="score"></param>
+
+    //Updates info to leaderboard database
     public void UpdatePlayerLeaderBoard(string uuid, int score)
     {
         dbLeaderboardRef.Child(uuid).Child("score").SetValueAsync(score);
     }
+
     /// <summary>
     /// this makes a list, if there is something inside, it loops through, sorting it by score, adding it to a list, from small to big and reversing it
     /// </summary>
@@ -176,11 +180,8 @@ public class BirdFirebaseManager : MonoBehaviour
 
         return leaderBoardList;
     }*/
-    /// <summary>
-    /// changes the display name in the database
-    /// </summary>
-    /// <param name="uuid"></param>
-    /// <param name="displayName"></param>
+
+    // Changes display name in database
     public void NewPlayerName(string uuid, string displayname)
     {
         dbLeaderboardRef.Child(uuid).Child("displayname").SetValueAsync(displayname);
@@ -188,11 +189,7 @@ public class BirdFirebaseManager : MonoBehaviour
         //dbPlayerBase.Child(uuid).Child("displayName").SetValueAsync(displayName);
     }
 
-    /// <summary>
-    /// removes the highscore in the database to 0
-    /// </summary>
-    /// <param name="uuid"></param>
-    /// <param name="score"></param>
+    //Removes score (changes score to 0)
     public void DeletePlayerStats(string uuid, int score)
     {
         Debug.Log(uuid);

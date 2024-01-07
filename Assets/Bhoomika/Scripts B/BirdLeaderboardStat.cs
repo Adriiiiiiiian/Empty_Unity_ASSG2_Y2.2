@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class BirdLeaderboardStat 
 {
-
+    //Declare variables
     public string displayname;
     public int score;
 
@@ -18,12 +18,14 @@ public class BirdLeaderboardStat
         //
     }
 
+    //Declaration
     public BirdLeaderboardStat(string DisplayName, int score)
     {
         this.displayname = displayname;
         this.score = score;
     }
 
+    //To Json
     public string BirdLeaderboardStatToJson()
     {
         return JsonUtility.ToJson(this);

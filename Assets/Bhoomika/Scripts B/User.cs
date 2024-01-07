@@ -9,6 +9,7 @@ using UnityEngine;
 
 public class User
 {
+    //Declare variables
     public string displayname;
     public string email;
 
@@ -17,9 +18,9 @@ public class User
         //
     }
 
+    //Declaration
     public User(string displayname, string email)
     {
-
         this.displayname = displayname;
         this.email = email;
     }

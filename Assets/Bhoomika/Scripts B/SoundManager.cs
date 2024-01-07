@@ -18,50 +18,69 @@ using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
+    //Declare variables
     [SerializeField] Slider volumeSlider;
-    public FirebaseAuth auth;
     public AudioSource sound;
+
+    //Declare auth
+    public FirebaseAuth auth;
 
     void Start()
     {
+        //Check if slider has been touched before
         if(!PlayerPrefs.HasKey("musicVolume"))
         {
+            //Keep volume on slider 
             PlayerPrefs.SetFloat("musicVolume", 1);
             Load();
         }
         else
         {
+            //Start at highest volume
             Load();
         }
+
+        //Initialize firebase
         auth = FirebaseAuth.DefaultInstance;
     }
 
+    //Change volume according to slider value from 0 to 1
     public void ChangeVolume()
     {
         AudioListener.volume = volumeSlider.value;
+
+        //Save volume via function
         Save();
     }
 
+    //Using Get Set to Get currrent volume
     private void Load()
     {
         volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
     }
 
+    //Using Get Set to Set currrent volume
     private void Save()
     {
         PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);
     }
 
+    //Change to game scene OnClick() on Play btn
     public void Intro()
     {
         SceneManager.LoadScene(2);
     }
 
+    //Sign out function
     public void SignOutUser()
     {
+        //Checks if user is not null
         if (auth.CurrentUser != null)
         {
+            //Sign out from Auth
             auth.SignOut();
+
+            //Returns to Login Scene
             SceneManager.LoadScene(0);
         }
     }
