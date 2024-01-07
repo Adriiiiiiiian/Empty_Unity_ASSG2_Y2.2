@@ -67,7 +67,7 @@ public class ChopeGameManager : MonoBehaviour
         tissueButton.SetActive(true);
         tissuePlatform.SetActive(true);
         UnityCanvas.SetActive(false);
-        Canvas.SetActive(false);
+        //Canvas.SetActive(false);
     }
 
     public void DeactivateGameObjects()
@@ -173,6 +173,7 @@ public class ChopeGameManager : MonoBehaviour
     while (countdown > 0)
     {
         countdown -= Time.deltaTime;
+        countdown = Mathf.Max(countdown, 0f);
         timerText.text = "Time Remaining: " + countdown.ToString("F2") + 's';
 
         //Debug.Log("Countdown: " + countdown.ToString("F2") + 's');
